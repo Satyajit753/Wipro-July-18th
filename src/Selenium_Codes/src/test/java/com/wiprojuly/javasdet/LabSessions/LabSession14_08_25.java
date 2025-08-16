@@ -20,11 +20,11 @@ public class LabSession14_08_25 {
 	    driver.manage().window().maximize();
 	    Thread.sleep(2000);
 	    WebElement firstName = driver.findElement(By.xpath("//input[@id='name']"));
-	    firstName.sendKeys("Pratysh");
+	    firstName.sendKeys("Satyajit");
 	    Thread.sleep(2000);
 	    
 	    WebElement emailField = driver.findElement(By.xpath("//input[@id='email']"));
-	    emailField.sendKeys("daspratyush444@hotmail.com");
+	    emailField.sendKeys("satyajitpradhan@gmail.com");
 	    Thread.sleep(2000);
 	    
 	    WebElement genderRadio = driver.findElement(By.xpath("//input[@id='gender']"));
@@ -49,7 +49,7 @@ public class LabSession14_08_25 {
         Thread.sleep(2000);
         
         WebElement uploadInput = driver.findElement(By.xpath("//*[@id='picture']"));
-        uploadInput.sendKeys("C:/Users/Pratyush Kumar Das/Downloads/Screenshot 2025-08-11 120126.png");
+        uploadInput.sendKeys("C:/Users/Satyajit/Downloads/Screenshot 2025-08-11 120126.png");
         
         Thread.sleep(2000);
         
