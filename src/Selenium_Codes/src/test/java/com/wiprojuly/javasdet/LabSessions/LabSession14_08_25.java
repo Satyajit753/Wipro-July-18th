@@ -1,4 +1,4 @@
-package LabSessionsTesting;
+package com.wiprojuly18th.MyFirstMavenProject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,64 +11,44 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LabSession14_08_25 {
 
-	public static void main(String[] args) throws InterruptedException {
-		
-		ChromeOptions chromeOptions = new ChromeOptions();
-	    WebDriverManager.chromedriver().setup();
-	    WebDriver driver = new ChromeDriver(chromeOptions);
-	    driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
-	    driver.manage().window().maximize();
-	    Thread.sleep(2000);
-	    WebElement firstName = driver.findElement(By.xpath("//input[@id='name']"));
-	    firstName.sendKeys("Satyajit");
-	    Thread.sleep(2000);
-	    
-	    WebElement emailField = driver.findElement(By.xpath("//input[@id='email']"));
-	    emailField.sendKeys("satyajitpradhan@gmail.com");
-	    Thread.sleep(2000);
-	    
-	    WebElement genderRadio = driver.findElement(By.xpath("//input[@id='gender']"));
-	    genderRadio.click();
-	    Thread.sleep(2000);
-	    
-	    WebElement mobileField = driver.findElement(By.xpath("//input[@id='mobile']"));
-	    mobileField.sendKeys("9556959930");
-	    Thread.sleep(2000);
-	    
-	    WebElement datePickerBtn = driver.findElement(By.xpath("//*[@id=\"dob\"]"));
-        datePickerBtn.sendKeys("14-07-2002");
-        Thread.sleep(2000);
-        
-        WebElement subjectsField = driver.findElement(By.xpath("//input[@id='subjects']"));
-        subjectsField.sendKeys("Selenium Java");
-        Thread.sleep(2000);
-        
-        WebElement hobbiesCheckbox = driver.findElement(By.xpath("//input[@id='hobbies']"));
-        hobbiesCheckbox.click();
-        
-        Thread.sleep(2000);
-        
-        WebElement uploadInput = driver.findElement(By.xpath("//*[@id='picture']"));
-        uploadInput.sendKeys("C:/Users/Satyajit/Downloads/Screenshot 2025-08-11 120126.png");
-        
-        Thread.sleep(2000);
-        
-        WebElement addressField = driver.findElement(By.xpath("//textarea[@id='picture']"));
-        addressField.sendKeys("Bhubaneswar, Odisha, India");
-        Thread.sleep(2000);
-       
-        Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
-        stateDropdown.selectByVisibleText("Uttar Pradesh");
-        Thread.sleep(1500);
-        
-        Select cityDropdown = new Select(driver.findElement(By.xpath("//select[@id='city']")));
-        cityDropdown.selectByVisibleText("Lucknow");
-        Thread.sleep(2000);
-        
-        WebElement loginBtn = driver.findElement(By.xpath("//input[@value='Login']"));
-        loginBtn.click();
-        
-	    
-	}
+    public static void main(String[] args) {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver(chromeOptions);
 
+        driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+        driver.manage().window().maximize();
+        WebElement name = driver.findElement(By.xpath("//input[@id='name']"));
+        name.sendKeys("Satyajit");
+        WebElement email = driver.findElement(By.xpath("//input[@id='email']"));
+        email.sendKeys("pradhansatyajit@gmail.com");
+        WebElement gender = driver.findElement(By.xpath("//input[@id='gender']"));
+        gender.click();
+        WebElement mobile = driver.findElement(By.xpath("//input[@id='mobile']"));
+        mobile.sendKeys("9876543210");
+        WebElement dob = driver.findElement(By.xpath("//input[@id='dob']"));
+        dob.sendKeys("14-08-2025"); 
+        WebElement subjects = driver.findElement(By.xpath("//input[@id='subjects']"));
+        subjects.sendKeys("Maths"); 
+        WebElement hobby = driver.findElement(By.xpath("//input[@id='hobbies']"));
+        hobby.click();
+
+        WebElement picture = driver.findElement(By.xpath("//input[@id='picture']"));
+        picture.sendKeys("C:\\Users\\HP\\Downloads\\test-file.txt"); 
+
+        WebElement address = driver.findElement(By.xpath("//textarea[@id='picture']"));
+        address.sendKeys("xyz");
+        
+        WebElement state=driver.findElement(By.xpath("//select[@id='state']"));
+        Select sel=new Select(state);
+        sel.selectByVisibleText("Uttar Pradesh");
+        
+        WebElement city=driver.findElement(By.xpath("//select[@id='city']"));
+        Select sel1=new Select(city);
+        sel1.selectByVisibleText("Lucknow");
+
+        WebElement submit = driver.findElement(By.xpath("//input[@value='Login']"));
+        submit.click();  
+        
+    }
 }
